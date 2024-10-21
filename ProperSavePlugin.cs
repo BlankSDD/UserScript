@@ -142,7 +142,7 @@ namespace ProperSave
 			LostNetworkUser.Subscribe();
 			Language.collectLanguageRootFolders += this.CollectLanguageRootFolders;
 			ContentManager.onContentPacksAssigned += this.ContentManagerOnContentPacksAssigned;
-      SaveFile.OnGatherSaveData += GatherPersistentDesperadoData;
+      			SaveFile.OnGatherSaveData += GatherPersistentDesperadoData;
 		}
 
 		// Token: 0x0600004F RID: 79 RVA: 0x00003F64 File Offset: 0x00002164
@@ -156,7 +156,7 @@ namespace ProperSave
 			LostNetworkUser.Unsubscribe();
 			Language.collectLanguageRootFolders -= this.CollectLanguageRootFolders;
 			ContentManager.onContentPacksAssigned -= this.ContentManagerOnContentPacksAssigned;
-      SaveFile.OnGatherSaveData -= GatherPersistentDesperadoData;
+      			SaveFile.OnGatherSaveData -= GatherPersistentDesperadoData;
 		}
 
 		// Token: 0x06000050 RID: 80 RVA: 0x00003FB2 File Offset: 0x000021B2
@@ -202,15 +202,15 @@ namespace ProperSave
 			}
 		}
 		
-    private void GatherPersistentDesperadoData(Dictionary<string, object> saveData)
-    {
-        foreach (var player in PlayerCharacterMasterController.instances)
-        {
-            var userName = player.master.GetBody().GetUserName();
-            var buffCount = player.master.GetBody().GetBuffCount(RoR2Content.Buffs.BanditSkull);
-            saveData[userName] = buffCount;
-        }
-    }
+		private void GatherPersistentDesperadoData(Dictionary<string, object> saveData)
+		{
+  			foreach (var player in PlayerCharacterMasterController.instances)
+			{
+			    var userName = player.master.GetBody().GetUserName();
+			    var buffCount = player.master.GetBody().GetBuffCount(RoR2Content.Buffs.BanditSkull);
+			    saveData[userName] = buffCount;
+			}
+		}
 		
 		// Token: 0x06000055 RID: 85 RVA: 0x0000430C File Offset: 0x0000250C
 		[CompilerGenerated]
