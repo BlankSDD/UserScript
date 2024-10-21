@@ -145,19 +145,19 @@ namespace ProperSave
 					{
 						list.Remove(playerData);
 						playerData.LoadPlayer(user);
-            if (this.ModdedData.ContainsKey(user.GetNetworkUserName()))
-            {
-                int buffCount = (int)this.ModdedData[user.GetNetworkUserName()].Value;
-                var body = user.master.GetBody();
-                for (int i = 0; i < buffCount; i++)
-                {
-                    body.AddBuff(RoR2Content.Buffs.BanditSkull);
-                }
-				 	 	}
+					        if (this.ModdedData.ContainsKey(user.GetNetworkUserName()))
+					        {
+					        	int buffCount = (int)this.ModdedData[user.GetNetworkUserName()].Value;
+					                var body = user.master.GetBody();
+					                for (int i = 0; i < buffCount; i++)
+					                {
+					                    body.AddBuff(RoR2Content.Buffs.BanditSkull);
+					                }
+						}
 					}
 				}
-      }
-    }
+      			}
+    		}
 		// Token: 0x0600006F RID: 111 RVA: 0x00004684 File Offset: 0x00002884
 		public T GetModdedData<T>(string key)
 		{
